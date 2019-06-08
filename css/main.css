@@ -1,0 +1,98 @@
+
+body {
+	color: white;
+	background-color: black;
+	text-align: center;
+}
+
+@font-face {
+	font-family: 'ghastly-panic';
+	src: url('fonts/ghastly-panic.regular.ttf');
+	}
+
+@font-face {
+	font-family: 'zombie-holocaust';
+	src: url('fonts/zombie-holocaust.regular.ttf');
+}
+
+@font-face {
+	font-family: 'slender';
+	src: url('fonts/slender.brk.ttf');
+}
+
+header {
+	height: 50px;
+}
+
+main {
+	position:absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-y:auto; 
+}
+
+h1 {
+	font-family: 'ghastly-panic';
+	font-size: 15em;
+	padding: 15% 5% 15% 5%;
+	background: -webkit-linear-gradient(#eee, #eee, #eee, #f73f3f, #ff0000, #8b0000);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 0;
+}
+
+h2 {
+	margin: 0pc;
+}
+
+li {
+	display: inline-block;
+}
+
+section {
+	background-color: gray;
+	height: 820px;
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	position: relative;
+}
+
+.land {
+	background-image: url('../img/single-skull.jpg');
+}
+
+.descrip {
+	background-image: url('../img/death-hood.jpg');	
+}
+
+.preview {
+	background-image: url('../img/skull-pile.jpg');	
+}
+
+.about {
+	background-image: url('../img/man-backlit.jpg');	
+}
+
+.text {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.box {
+	background: rgba(93, 93, 93, 0.5);
+  	height: 100%;
+  	width: 80%;
+}
+
+.box p, h1 {
+	position: relative;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+}

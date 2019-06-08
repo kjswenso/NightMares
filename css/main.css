@@ -10,89 +10,91 @@ body {
 	src: url('fonts/ghastly-panic.regular.ttf');
 	}
 
-@font-face {
-	font-family: 'zombie-holocaust';
-	src: url('fonts/zombie-holocaust.regular.ttf');
-}
-
-@font-face {
-	font-family: 'slender';
-	src: url('fonts/slender.brk.ttf');
-}
 
 header {
 	height: 50px;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #000;
 }
 
 main {
-	position:absolute;
-    top: 50px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    overflow-y:auto; 
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(4, 820px);
+	grid-template-areas: 
+		"land"
+		"descrip"
+		"preview"
+		"about";
+   overflow-y:auto;
 }
+
 
 h1 {
 	font-family: 'ghastly-panic';
 	font-size: 15em;
-	padding: 15% 5% 15% 5%;
+	padding: 10%;
+	letter-spacing: 6px;
 	background: -webkit-linear-gradient(#eee, #eee, #eee, #f73f3f, #ff0000, #8b0000);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	margin-bottom: 0;
 }
 
-h2 {
-	margin: 0pc;
-}
 
 li {
 	display: inline-block;
 }
 
-section {
-	background-color: gray;
-	height: 820px;
-	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover;
-  	position: relative;
-}
-
+/*background images for sections*/
 .land {
+	grid-area: land;
 	background-image: url('../img/single-skull.jpg');
 }
 
+.land-text {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .descrip {
-	background-image: url('../img/death-hood.jpg');	
+	grid-area: descrip;
+	background-image: url('../img/death-hood.jpg');
+
 }
 
 .preview {
-	background-image: url('../img/skull-pile.jpg');	
+	grid-area: preview;
+	background-image: url('../img/skull-pile.jpg');
+	display: grid;
 }
 
 .about {
+	grid-area: about;
 	background-image: url('../img/man-backlit.jpg');	
+
 }
 
 .text {
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.box {
-	background: rgba(93, 93, 93, 0.5);
-  	height: 100%;
-  	width: 80%;
-}
-
-.box p, h1 {
-	position: relative;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
 	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	background: rgba(93, 93, 93, 0.5);
+}
+
+
+footer {
+	height: 50px;
+	background-color: #000;
+	margin-top: 3%;
 }

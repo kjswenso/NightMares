@@ -3,7 +3,7 @@ body {
 	color: white;
 	background-color: black;
 	text-align: center;
-	font-family: sans-serif;
+	font-family: 'Amatic SC', Helvetica, Arial, sans-serif, cursive;
 }
 
 @font-face {
@@ -46,12 +46,28 @@ h1 {
 	margin-bottom: 0;
 }
 
+h2 {
+	font-family: 'Nothing You Could Do', cursive, sans-serif;
+}
 
 li {
 	display: inline-block;
 }
 
-/*background images for sections*/
+a:link {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #f73f3f;
+}
+
+a:hover {
+	color: #ff0000;
+}
+
+/*background images and grid building for sections*/
 .land {
 	grid-area: land;
 	background-image: url('../img/single-skull.jpg');
@@ -64,10 +80,17 @@ li {
 	transform: translate(-50%, -50%);
 }
 
+.land-text ul {
+	vertical-align: bottom;
+}
+
 .descrip {
 	grid-area: descrip;
 	background-image: url('../img/death-hood.jpg');
+}
 
+.descrip-text p {
+	font-size: 2em;
 }
 
 .preview {
@@ -85,7 +108,7 @@ li {
 	grid-template-rows: 50% 20% 30%;
 	justify-items: center;
 	align-items: center;
-	height: 820px;
+	max-height: 820px;
 }
 
 .cover {

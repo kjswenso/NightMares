@@ -3,6 +3,7 @@ body {
 	color: white;
 	background-color: black;
 	text-align: center;
+	font-family: sans-serif;
 }
 
 @font-face {
@@ -37,7 +38,7 @@ main {
 h1 {
 	font-family: 'ghastly-panic';
 	font-size: 15em;
-	padding: 10%;
+	padding: 15%;
 	letter-spacing: 6px;
 	background: -webkit-linear-gradient(#eee, #eee, #eee, #f73f3f, #ff0000, #8b0000);
 	-webkit-background-clip: text;
@@ -72,8 +73,41 @@ li {
 .preview {
 	grid-area: preview;
 	background-image: url('../img/skull-pile.jpg');
-	display: grid;
+	width: 80%;
+	margin: 0 auto;
 }
+
+/*sample audio grid area*/ 
+
+.preview-grid {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 50% 20% 30%;
+	justify-items: center;
+	align-items: center;
+	height: 820px;
+}
+
+.cover {
+	grid-area: 1 / 1 / 2 / 2;
+
+}
+
+.preview-text {
+	grid-area: 1 / 2 / 2 / 3;
+	width: 75%;
+}
+
+.buy {
+	grid-area: 2 / 1 / 3 / 3;
+}
+
+.sample-audio {
+	grid-column: 1 / span 3;
+
+}
+
+/* end audio grid area*/ 
 
 .about {
 	grid-area: about;
@@ -88,7 +122,6 @@ li {
 	height: 100%;
 	margin: 0 auto;
 	justify-content: center;
-	align-items: center;
 	background: rgba(93, 93, 93, 0.5);
 }
 

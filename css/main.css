@@ -25,7 +25,7 @@ header {
 main {
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: repeat(4, 820px);
+	grid-template-rows: repeat(2, 820px 500px);
 	grid-template-areas: 
 		"land"
 		"descrip"
@@ -69,8 +69,10 @@ a:hover {
 
 /*background images and grid building for sections*/
 .land {
-	grid-area: land;
 	background-image: url('../img/single-skull.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	grid-area: land;
 }
 
 .land-text {
@@ -85,8 +87,10 @@ a:hover {
 }
 
 .descrip {
-	grid-area: descrip;
 	background-image: url('../img/death-hood.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	grid-area: descrip;
 }
 
 .descrip-text p {
@@ -94,31 +98,29 @@ a:hover {
 }
 
 .preview {
-	grid-area: preview;
 	background-image: url('../img/skull-pile.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	grid-area: preview;
 	width: 80%;
 	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 40% 20% 30%;
+	justify-items: center;
+	align-items: center;
 }
 
 /*sample audio grid area*/ 
 
-.preview-grid {
-	display: grid;
-	grid-template-columns: 50% 50%;
-	grid-template-rows: 50% 20% 30%;
-	justify-items: center;
-	align-items: center;
-	max-height: 820px;
-}
-
 .cover {
 	grid-area: 1 / 1 / 2 / 2;
-
+	max-width: 70%;
+	height: auto;
 }
 
 .preview-text {
-	grid-area: 1 / 2 / 2 / 3;
-	width: 75%;
+	grid-area:  1 / 2 / 2 / 3;
 }
 
 .buy {
@@ -126,15 +128,73 @@ a:hover {
 }
 
 .sample-audio {
-	grid-column: 1 / span 3;
+	grid-area: 3 / 1 / 4 / 3;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	max-width: 100%;
+	align-self: center;
+}
 
+#sample1 {
+	grid-area: 1 / 1 / 2 / 2;
+}
+
+#sample2 {
+	grid-area: 1 / 2 / 2 / 3;
+}
+
+#sample3 {
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+#sample4 {
+	grid-area: 2 / 1 / 3 / 2;
+}
+
+#sample5 {
+	grid-area: 2 / 2 / 3 / 3;
+}
+
+#sample6 {
+	grid-area: 2 / 3 / 3 / 4;
+}
+
+#sample7 {
+	grid-area: 3 / 1 / 4 / 2;
+}
+
+#sample8 {
+	grid-area: 3 / 2 / 4 / 3;
+}
+
+#sample9 {
+	grid-area: 3 / 3 / 4 / 4;
+}
+
+#sample10 {
+	grid-area: 4 / 1 / 5 / 2;
+}
+
+#sample11 {
+	grid-area: 4 / 2 / 5 / 3;
+}
+
+#sample12 {
+	grid-area: 4 / 3 / 5 / 4 ;
 }
 
 /* end audio grid area*/ 
 
+audio {
+	max-width: 90%;
+}
+
 .about {
+	background-image: url('../img/man-backlit.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
 	grid-area: about;
-	background-image: url('../img/man-backlit.jpg');	
 
 }
 
@@ -144,6 +204,7 @@ a:hover {
 	width: 80%;
 	height: 100%;
 	margin: 0 auto;
+	padding: 5px 0px;
 	justify-content: center;
 	background: rgba(93, 93, 93, 0.5);
 }
@@ -153,4 +214,88 @@ footer {
 	height: 50px;
 	background-color: #000;
 	margin-top: 3%;
+}
+
+/* responsive design */ 
+
+
+@media screen and (min-width: 850px) and (max-width: 1149px) {
+
+	.land {
+		background-image: url('../img/single-skull-med.jpg');
+	}
+
+	.descrip {
+		background-image: url('../img/death-hood-med.jpg');
+	}
+
+	.preview {
+		background-image: url('../img/skull-pile-med.jpg');
+	}
+
+
+	.about {
+		background-image: url('../img/man-backlit-med.jpg');
+	}
+
+}
+
+@media screen and (max-width: 849px) {
+
+	main {
+		grid-template-rows: 500px 300px 775px 300px;
+	}
+
+	h1 {
+		font-size: 8em;
+		padding: 10% 2%;
+	}
+
+	h2 {
+		font-size: 1.25em;
+	}
+
+	.land {
+		background-image: url('../img/single-skull-small.jpg');
+		background-size: cover;
+	}
+
+	.descrip {
+		background-image: url('../img/death-hood-small.jpg');
+		background-size: cover;
+	}
+
+	.preview {
+		background-image: url('../img/skull-pile-small.jpg');
+		background-size: cover;
+	}
+
+	.about {
+		background-image: url('../img/man-backlit-small.jpg');
+		background-size:cover;
+	}
+}
+
+@media screen and (max-width: 639px) {
+	
+	main {
+		grid-template-rows: 400px 400px 775px 300px;
+	}
+
+	.descrip-text {
+		font-size: .8em;
+	}
+
+	.preview {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+}
+
+@media screen and (max-width: 639px) {
+	h1 {
+		font-size: 6em;
+	}
 }

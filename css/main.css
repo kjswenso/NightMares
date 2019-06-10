@@ -73,6 +73,7 @@ a:hover {
 	background-position: center;
 	background-repeat: no-repeat;
 	grid-area: land;
+	height: 820px;
 }
 
 .land-text {
@@ -258,6 +259,7 @@ footer {
 	.land {
 		background-image: url('../img/single-skull-small.jpg');
 		background-size: cover;
+		height: 500px;
 	}
 
 	.descrip {
@@ -280,6 +282,10 @@ footer {
 	
 	main {
 		grid-template-rows: 400px 400px 775px 300px;
+	}
+
+	.land {
+		height: 400px;
 	}
 
 	.descrip-text {
